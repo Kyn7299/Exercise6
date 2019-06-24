@@ -24,7 +24,7 @@ public class Bai2 {
 				}
 			}
 			else {
-				m += al[i];
+				m += al[i] + " ";
 				if (i == al.length-2 && !al[i+1].matches(".*[a-zA-Z].*"))
 					m += al[i+1];
 			}
@@ -51,7 +51,7 @@ public class Bai2 {
 			break;
 		case "Test TEST for the dots . . ." :
 			System.out.println("Input : Test TEST for the dots . . .");
-			System.out.println("Expect output : REPEAT for the dots ...");
+			System.out.println("Expect output : REPEAT for the dots . . .");
 			System.out.println("Real output : "+ replaceRepetitive(text));
 			break;
 		case "I i i want to go to to school. School is the the the best." :
@@ -59,11 +59,16 @@ public class Bai2 {
 			System.out.println("Expect output : REPEAT want to go REPEAT school. School is REPEAT best.");
 			System.out.println("Real output : "+ replaceRepetitive(text));
 			break;
+		case "1 1 1 2 3 3 Test number number" :
+			System.out.println("Input : 1 1 1 2 3 3 Test number number");
+			System.out.println("Expect output : 1 1 1 2 3 3 Test REPEAT");
+			System.out.println("Real output : "+ replaceRepetitive(text));
+			break;
 		}	
 	}
 	
 	public static void main(String[] args) {
-		String text = "Test TEST for the dots . . .";
+		String text = "1 1 1 2 3 3 Test number number";
 		test(text);
 	}
 }
